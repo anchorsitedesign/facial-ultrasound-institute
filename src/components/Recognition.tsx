@@ -13,7 +13,7 @@ export default function Recognition() {
       label: "Lectures\nDelivered",
     },
     {
-      value: "20+",
+      value: "25+",
       label: "Years\nClinical Experience",
     },
   ];
