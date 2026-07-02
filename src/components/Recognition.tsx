@@ -2,57 +2,83 @@ export default function Recognition() {
   const stats = [
     {
       value: "15+",
-      label: "Countries\nEducated",
+      label: "Countries Educated",
     },
     {
       value: "1,000+",
-      label: "Providers\nTrained",
+      label: "Medical Professionals Trained",
     },
     {
       value: "100+",
-      label: "Lectures\nDelivered",
+      label: "International Lectures",
     },
     {
       value: "25+",
-      label: "Years\nClinical Experience",
+      label: "Years of Clinical Experience",
     },
   ];
 
   const credentials = [
+    "Harvard Executive Education",
     "Top 100 Best Aesthetic Injector",
     "JAAD Published Author",
     "Certified Aesthetic Nurse Specialist (CANS)",
     "International Faculty",
-    "Ultrasound Pioneer",
-    "Global Medical Educator",
-    "Industry Trainer",
-    "Key Opinion Leader",
+    "Ultrasound Educator & Researcher",
+  ];
+
+  const partners = [
+    "MERZ",
+    "REVANCE",
+    "REVANESSE",
+    "PACE",
+    "AAFE",
+    "GALDERMA",
   ];
 
   return (
-    <section className="bg-white py-28 px-6">
+    <section className="bg-[#FCFBF8] py-32 px-6">
       <div className="mx-auto max-w-7xl">
 
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C6A15B]">
             Recognition
           </p>
 
-          <h2 className="mt-4 text-5xl font-light leading-tight text-[#1C1C1E]">
-            Trusted by physicians,
+          <h2 className="mt-5 text-5xl font-light leading-tight text-[#1C1C1E] md:text-6xl">
+            Internationally recognized
             <br />
-            educators, and industry leaders.
+            for education,
+            research, and innovation.
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#6B675F]">
-            Dr. Dawn Naylor is recognized internationally for advancing facial
-            ultrasound education, injectable safety, and evidence-based
-            aesthetic medicine through teaching, research, consulting, and
-            clinical innovation.
+          <p className="mt-8 max-w-3xl text-xl leading-9 text-[#6B675F]">
+            Dr. Dawn Naylor has earned recognition throughout the aesthetic
+            medicine community for advancing facial ultrasound education,
+            improving patient safety, publishing research, and training
+            physicians and advanced practitioners around the world.
           </p>
         </div>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-4">
+        <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-[#ECE6DE] bg-[#ECE6DE] lg:grid-cols-3">
+
+          {credentials.map((credential) => (
+            <div
+              key={credential}
+              className="bg-white p-10 transition duration-300 hover:bg-[#F8F6F2]"
+            >
+              <div className="mb-8 h-px w-16 bg-[#C6A15B]" />
+
+              <h3 className="text-2xl font-light leading-snug text-[#1C1C1E]">
+                {credential}
+              </h3>
+            </div>
+          ))}
+
+        </div>
+
+        <div className="mt-24 grid gap-8 md:grid-cols-4">
+
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -62,60 +88,31 @@ export default function Recognition() {
                 {stat.value}
               </div>
 
-              <div className="mt-3 whitespace-pre-line uppercase tracking-[0.2em] text-sm text-[#8E857A]">
+              <div className="mt-3 uppercase tracking-[0.18em] text-sm text-[#8E857A]">
                 {stat.label}
               </div>
             </div>
           ))}
+
         </div>
 
-        <div className="mt-24 grid gap-12 lg:grid-cols-2">
+        <div className="mt-28">
 
-          <div>
-            <h3 className="text-sm uppercase tracking-[0.3em] text-[#C6A15B]">
-              Distinguished Credentials
-            </h3>
+          <p className="text-center text-xs uppercase tracking-[0.35em] text-[#C6A15B]">
+            Industry Collaborations
+          </p>
 
-            <div className="mt-8 grid gap-5">
-              {credentials.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-[#EFEAE3] pb-5"
-                >
-                  <div className="h-2 w-2 rounded-full bg-[#C6A15B]" />
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[#ECE6DE] bg-[#ECE6DE] md:grid-cols-3 lg:grid-cols-6">
 
-                  <span className="text-lg text-[#3D3935]">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+            {partners.map((partner) => (
+              <div
+                key={partner}
+                className="flex h-28 items-center justify-center bg-white text-sm tracking-[0.25em] text-[#7F796F] transition hover:bg-[#F8F6F2]"
+              >
+                {partner}
+              </div>
+            ))}
 
-          <div>
-            <h3 className="text-sm uppercase tracking-[0.3em] text-[#C6A15B]">
-              Trusted By
-            </h3>
-
-            <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-3">
-
-              {[
-                "MERZ",
-                "REVANCE",
-                "REVANESSE",
-                "PACE",
-                "AAFE",
-                "GALDERMA",
-              ].map((logo) => (
-                <div
-                  key={logo}
-                  className="flex h-24 items-center justify-center rounded-xl border border-[#ECE7E0] text-sm tracking-[0.25em] text-[#8A847B]"
-                >
-                  {logo}
-                </div>
-              ))}
-
-            </div>
           </div>
 
         </div>
