@@ -1,56 +1,63 @@
+import Image from "next/image";
+
 export default function Research() {
   const highlights = [
-    {
-      title: "JAAD Published Research",
-      description:
-        "Her doctoral quality improvement project, Integrating Ultrasound into Medical Aesthetics, was published in the Journal of the American Academy of Dermatology.",
-    },
-    {
-      title: "Principal Investigator",
-      description:
-        "Dr. Naylor leads facial ultrasound research initiatives focused on safety, innovation, and evidence-based standards in aesthetic medicine.",
-    },
-    {
-      title: "International Collaboration",
-      description:
-        "Her research initiatives include collaboration with Dr. Peter Velthuis and Dr. Leonie Schelke, internationally recognized leaders in facial ultrasound.",
-    },
+    "JAAD published research",
+    "Principal investigator",
+    "International collaboration",
   ];
 
   return (
-    <section id="research" className="bg-white px-6 py-28 text-[#1C1C1E]">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#C6A15B]">
-              Research
-            </p>
-
-            <h2 className="mt-4 text-5xl font-light leading-tight">
-              Advancing evidence-based aesthetic medicine.
-            </h2>
-
-            <p className="mt-8 max-w-xl text-lg leading-8 text-[#6B675F]">
-              Dr. Naylor’s work bridges clinical practice, ultrasound education,
-              and research to support safer, more precise aesthetic care.
-            </p>
+    <section id="research" className="bg-[#F8F6F2] px-6 py-28 text-[#1C1C1E]">
+      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative">
+          <div className="overflow-hidden rounded-[2rem] bg-white shadow-2xl shadow-black/10">
+            <Image
+              src="/images/research/research-collaboration.png"
+              alt="Facial ultrasound research collaboration"
+              width={1200}
+              height={900}
+              className="h-[560px] w-full object-cover"
+            />
           </div>
+        </div>
 
-          <div className="grid gap-6">
+        <div>
+          <p className="text-xs uppercase tracking-[0.35em] text-[#C6A15B]">
+            Research & Innovation
+          </p>
+
+          <h2 className="mt-5 text-5xl font-light leading-tight md:text-6xl">
+            Advancing the science behind safer aesthetic medicine.
+          </h2>
+
+          <p className="mt-8 text-lg leading-8 text-[#6B675F]">
+            The Institute bridges clinical practice, facial ultrasound
+            education, and published research to support safer, more precise,
+            evidence-based aesthetic care.
+          </p>
+
+          <div className="mt-12 grid gap-5">
             {highlights.map((item) => (
               <div
-                key={item.title}
-                className="rounded-3xl border border-[#EFEAE3] bg-[#F8F6F2] p-8"
+                key={item}
+                className="border-t border-[#D9CDBB] pt-5 text-lg leading-7 text-[#3D3935]"
               >
-                <p className="text-sm uppercase tracking-[0.25em] text-[#C6A15B]">
-                  {item.title}
-                </p>
-
-                <p className="mt-4 text-lg leading-8 text-[#5F5A52]">
-                  {item.description}
-                </p>
+                {item}
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 rounded-[1.5rem] bg-white p-8 shadow-xl shadow-black/5">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#C6A15B]">
+              Published Work
+            </p>
+
+            <p className="mt-5 text-lg leading-8 text-[#3D3935]">
+              Dr. Naylor’s doctoral quality improvement project,
+              <em> Integrating Ultrasound into Medical Aesthetics</em>, was
+              published in the Journal of the American Academy of Dermatology.
+            </p>
           </div>
         </div>
       </div>
